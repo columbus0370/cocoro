@@ -421,7 +421,6 @@
       transition: border-color 0.3s, box-shadow 0.3s;
       background: #0a0a0a;
       position: relative;
-      cursor: pointer;
     }
     .ig-reel-wrap:hover {
       border-color: var(--pink);
@@ -432,29 +431,6 @@
       height: 560px;
       border: none;
       display: block;
-      margin-top: 0;
-    }
-    .ig-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 14px;
-      background: linear-gradient(135deg, #1a0a0a 0%, #0d0d1a 50%, #0a0a0a 100%);
-    }
-    .ig-play-btn {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      border: 2px solid var(--pink);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: var(--glow-pink);
-      transition: transform 0.2s;
-    }
-    .ig-play-btn svg { margin-left: 4px; }
-    .ig-reel-wrap:hover .ig-play-btn { transform: scale(1.1); }
-    .ig-load-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px; letter-spacing: 3px;
-      color: var(--silver); opacity: 0.7;
     }
 
     .video-label {
@@ -669,7 +645,6 @@
       transition: border-color 0.3s, box-shadow 0.3s;
       background: #0a0a0a;
       position: relative;
-      cursor: pointer;
     }
     .tiktok-wrap:hover {
       border-color: var(--silver);
@@ -678,28 +653,6 @@
     .tiktok-wrap iframe {
       width: 280px; height: 498px;
       border: none; display: block;
-    }
-    .tk-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 14px;
-      background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
-    }
-    .tk-play-btn {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      border: 2px solid var(--silver);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: var(--glow-silver);
-      transition: transform 0.2s;
-    }
-    .tk-play-btn svg { margin-left: 4px; }
-    .tiktok-wrap:hover .tk-play-btn { transform: scale(1.1); }
-    .tk-load-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px; letter-spacing: 3px;
-      color: var(--silver); opacity: 0.7;
     }
   </style>
 </head>
@@ -883,12 +836,7 @@
 
     <div class="video-card fade-up">
       <div class="ig-reel-wrap">
-        <div class="ig-placeholder" onclick="loadIgReel(this,'DXMnmlzAdqF')">
-          <div class="ig-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="ig-load-label">TAP TO PLAY</div>
-        </div>
+        <iframe src="https://www.instagram.com/reel/DXMnmlzAdqF/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
       <div class="video-label">
         <strong>Dance Performance</strong>COCORO - Reel
@@ -897,12 +845,7 @@
 
     <div class="video-card fade-up" style="transition-delay:0.1s">
       <div class="ig-reel-wrap">
-        <div class="ig-placeholder" onclick="loadIgReel(this,'DS7B7lcgYHM')">
-          <div class="ig-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="ig-load-label">TAP TO PLAY</div>
-        </div>
+        <iframe src="https://www.instagram.com/reel/DS7B7lcgYHM/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
       <div class="video-label">
         <strong>2025 まとめ動画</strong>Year in Review
@@ -911,27 +854,16 @@
 
     <div class="video-card fade-up" style="transition-delay:0.2s">
       <div class="ig-reel-wrap">
-        <div class="ig-placeholder" onclick="loadIgReel(this,'DPIqwL4AcFF')">
-          <div class="ig-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="ig-load-label">TAP TO PLAY</div>
-        </div>
+        <iframe src="https://www.instagram.com/reel/DPIqwL4AcFF/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
       <div class="video-label">
         <strong>Dance Reel</strong>Girls Hip Hop Style
       </div>
     </div>
 
-
     <div class="video-card fade-up" style="transition-delay:0.3s">
       <div class="tiktok-wrap">
-        <div class="tk-placeholder" onclick="loadTkVideo(this,'7639319578283134216')">
-          <div class="tk-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#C0C0C0"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="tk-load-label">TAP TO PLAY</div>
-        </div>
+        <iframe src="https://www.tiktok.com/embed/v2/7639319578283134216" width="280" height="498" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
@@ -940,12 +872,7 @@
 
     <div class="video-card fade-up" style="transition-delay:0.4s">
       <div class="tiktok-wrap">
-        <div class="tk-placeholder" onclick="loadTkVideo(this,'7640524704478022920')">
-          <div class="tk-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#C0C0C0"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="tk-load-label">TAP TO PLAY</div>
-        </div>
+        <iframe src="https://www.tiktok.com/embed/v2/7640524704478022920" width="280" height="498" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
@@ -1096,33 +1023,6 @@
 </footer>
 
 <script>
-/* ============ 動画遅延読み込み ============ */
-function loadIgReel(el, reelId) {
-  const wrap = el.closest('.ig-reel-wrap');
-  const iframe = document.createElement('iframe');
-  iframe.src = 'https://www.instagram.com/reel/' + reelId + '/embed/';
-  iframe.width = '280';
-  iframe.height = '560';
-  iframe.frameBorder = '0';
-  iframe.scrolling = 'no';
-  iframe.setAttribute('allowtransparency', 'true');
-  iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
-  wrap.innerHTML = '';
-  wrap.appendChild(iframe);
-}
-
-function loadTkVideo(el, videoId) {
-  const wrap = el.closest('.tiktok-wrap');
-  const iframe = document.createElement('iframe');
-  iframe.src = 'https://www.tiktok.com/embed/v2/' + videoId;
-  iframe.width = '280';
-  iframe.height = '498';
-  iframe.frameBorder = '0';
-  iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
-  wrap.innerHTML = '';
-  wrap.appendChild(iframe);
-}
-
 /* ============ グリッターCanvas（改良版） ============ */
 const canvas = document.getElementById('glitter-canvas');
 const ctx = canvas.getContext('2d');
