@@ -180,6 +180,24 @@
       50%      { transform: translateY(-8px) rotate(3deg); }
     }
 
+    /* ダンサーシルエット */
+    .hero-dancer {
+      position: absolute; right: 0; bottom: 0;
+      height: 78%; width: auto; object-fit: contain;
+      mix-blend-mode: screen; opacity: 0.6;
+      pointer-events: none; z-index: 1;
+    }
+    /* グリッタースプラッシュ装飾 */
+    .glitter-deco {
+      position: absolute; mix-blend-mode: screen;
+      pointer-events: none; z-index: 2;
+    }
+    /* COCOROロゴ画像 */
+    .hero-logo-img {
+      max-width: 300px; width: 82vw; height: auto; display: block;
+      filter: drop-shadow(0 0 18px rgba(255,20,147,0.55)) drop-shadow(0 0 6px rgba(192,192,192,0.3));
+    }
+
     /* COCOROタイトル */
     .hero-title { position: relative; z-index: 5; margin-bottom: 2px; }
     .hero-title-main {
@@ -949,6 +967,12 @@
 <section id="hero">
   <div class="hero-bg"></div>
 
+  <!-- ダンサーシルエット -->
+  <img src="assets/hero-bg.png" alt="" class="hero-dancer" aria-hidden="true" loading="eager">
+
+  <!-- グリッタースプラッシュ（左上） -->
+  <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-2%;left:-50px;width:200px;opacity:0.35;" aria-hidden="true" loading="eager">
+
   <!-- SVGチェーン -->
   <div class="hero-chain">
     <svg width="28" height="100%" viewBox="0 0 28 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:100%">
@@ -1037,7 +1061,7 @@
 
   <!-- タイトル -->
   <div class="hero-title">
-    <div class="hero-title-main">COCORO</div>
+    <img src="assets/logo-cocoro.png" alt="COCORO" class="hero-logo-img" loading="eager">
   </div>
   <div class="hero-subtitle">Girls Hip Hop Dancer</div>
 
@@ -1273,7 +1297,8 @@
 </div>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact">
+<section id="contact" style="position:relative;overflow:hidden;">
+  <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-60px;right:-60px;width:240px;opacity:0.25;" aria-hidden="true" loading="lazy">
   <div class="section-title fade-up">CONTACT</div>
   <p class="contact-lead fade-up">お仕事のご依頼・出演依頼・振付のご相談など<br>Instagram DM にてお気軽にご連絡ください。</p>
 
