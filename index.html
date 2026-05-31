@@ -439,6 +439,18 @@
     }
     .video-label strong { display: block; color: var(--white); font-size: 13px; margin-bottom: 2px; }
 
+    .swipe-hint {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 16px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px; letter-spacing: 3px; color: rgba(192,192,192,0.4);
+      animation: swipe-fade 2.5s ease-in-out infinite;
+    }
+    @keyframes swipe-fade {
+      0%,100% { opacity: 0.4; } 50% { opacity: 0.9; }
+    }
+    @media (min-width: 768px) { .swipe-hint { display: none; } }
+
     /* ============ ACTIVITY ============ */
     #activity { background: linear-gradient(180deg, var(--black) 0%, var(--black-mid) 100%); }
 
@@ -534,25 +546,36 @@
     }
     .sns-btn span { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 2px; color: var(--silver); }
 
-    .contact-divider {
+    .contact-ig-cta {
       display: flex; align-items: center; gap: 16px;
-      margin: 0 auto 32px; max-width: 300px;
+      width: 100%; max-width: 400px;
+      margin: 0 auto 40px;
+      padding: 22px 28px;
+      background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(255,20,147,0.04));
+      border: 1.5px solid var(--pink);
+      box-shadow: var(--glow-pink);
+      color: var(--white);
+      transition: all 0.3s;
+      text-decoration: none;
     }
-    .contact-divider::before {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--silver));
+    .contact-ig-cta:hover {
+      background: linear-gradient(135deg, rgba(255,20,147,0.2), rgba(255,20,147,0.08));
+      transform: translateY(-2px);
     }
-    .contact-divider::after {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, var(--silver), transparent);
+    .contact-ig-cta-text { flex: 1; }
+    .contact-ig-cta-text strong {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px; letter-spacing: 2px;
+      margin-bottom: 4px;
     }
-    .contact-divider span { font-size: 11px; letter-spacing: 2px; color: var(--silver); font-family: 'Oswald', sans-serif; white-space: nowrap; }
-    .contact-email {
-      font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 2px;
-      background: linear-gradient(135deg, #FF69B4, #FF1493);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(0 0 8px rgba(255,20,147,0.6));
+    .contact-ig-cta-text span {
+      font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1px;
+    }
+    .contact-sub-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px; letter-spacing: 3px;
+      color: var(--silver-dark); margin-bottom: 16px;
     }
 
     /* ============ FOOTER ============ */
@@ -880,6 +903,11 @@
     </div>
 
   </div>
+  <div class="swipe-hint" aria-hidden="true">
+    <svg width="14" height="10" viewBox="0 0 16 10"><path d="M14 5H2M6 1L2 5L6 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    SWIPE
+    <svg width="14" height="10" viewBox="0 0 16 10"><path d="M2 5H14M10 1L14 5L10 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </div>
 </section>
 
 <div class="marquee-wrap" aria-hidden="true">
@@ -961,7 +989,22 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact">
   <div class="section-title fade-up">CONTACT</div>
-  <p class="contact-lead fade-up">お仕事のご依頼・出演依頼・振付のご相談などは<br>下記SNSのDM、またはメールにてお気軽にご連絡ください。</p>
+  <p class="contact-lead fade-up">お仕事のご依頼・出演依頼・振付のご相談など<br>Instagram DM にてお気軽にご連絡ください。</p>
+
+  <a href="https://ig.me/m/cocoro_on_02" target="_blank" class="contact-ig-cta fade-up">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FF1493" stroke-width="1.5"/>
+      <circle cx="12" cy="12" r="5" stroke="#FF1493" stroke-width="1.5"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="#FF1493"/>
+    </svg>
+    <div class="contact-ig-cta-text">
+      <strong>Instagram DM で連絡する</strong>
+      <span>@cocoro_on_02</span>
+    </div>
+    <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="#FF1493" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </a>
+
+  <p class="contact-sub-label fade-up">FOLLOW ME</p>
   <div class="contact-sns fade-up">
     <a href="https://www.instagram.com/cocoro_on_02/" target="_blank" class="sns-btn">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -984,8 +1027,6 @@
       <span>TIKTOK</span>
     </a>
   </div>
-  <div class="contact-divider fade-up"><span>OR SEND EMAIL</span></div>
-  <p class="contact-email fade-up">contact@cocoro-dance.com</p>
 </section>
 
 <!-- ============ FOOTER ============ -->
