@@ -574,10 +574,6 @@
         linear-gradient(#9B59B6,#9B59B6) bottom right/1px 12px no-repeat;
       opacity: 0.5; pointer-events: none; z-index: 1;
     }
-    .event-featured-img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-      display: block;
-    }
     .event-featured-body {
       padding: 16px 18px 18px;
     }
@@ -612,6 +608,26 @@
       font-family: 'Oswald', sans-serif;
       background: rgba(155,89,182,0.85); color: #fff; border: 1px solid #9B59B6;
     }
+    .event-featured-img-wrap {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.45s ease;
+    }
+    .event-featured-img-wrap.open { max-height: 2000px; }
+    .event-featured-img {
+      width: 100%; height: auto; display: block; object-fit: contain;
+    }
+    .event-featured-toggle {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 11px 0;
+      background: transparent; border: none;
+      border-top: 1px solid rgba(155,89,182,0.2);
+      color: #C39BD3; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 2px;
+      cursor: pointer; position: relative; z-index: 2;
+    }
+    .event-featured-toggle .toggle-arrow {
+      display: inline-block; transition: transform 0.3s;
+    }
+    .event-featured-toggle.open .toggle-arrow { transform: rotate(180deg); }
 
     /* ============ CONTACT ============ */
     #contact {
@@ -887,9 +903,11 @@
       border-color: var(--silver);
       box-shadow: var(--glow-silver);
     }
+    /* iframe をコンテナより20px広くして右端（スクロールバー領域）をclip */
     .tiktok-wrap iframe {
-      width: 280px; height: 498px;
+      width: 300px; height: 498px;
       border: none; display: block;
+      margin-right: -20px;
     }
   </style>
 </head>
@@ -1108,7 +1126,7 @@
 
     <div class="video-card fade-up" style="transition-delay:0.3s">
       <div class="tiktok-wrap">
-        <iframe src="https://www.tiktok.com/embed/v2/7639319578283134216" width="280" height="498" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+        <iframe src="https://www.tiktok.com/embed/v2/7639319578283134216" width="300" height="498" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
@@ -1117,7 +1135,7 @@
 
     <div class="video-card fade-up" style="transition-delay:0.4s">
       <div class="tiktok-wrap">
-        <iframe src="https://www.tiktok.com/embed/v2/7640524704478022920" width="280" height="498" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+        <iframe src="https://www.tiktok.com/embed/v2/7640524704478022920" width="300" height="498" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
@@ -1193,7 +1211,6 @@
     <!-- Featured Event -->
     <div class="event-featured fade-up">
       <span class="event-featured-label">EVENT</span>
-      <img src="assets/sweetpop.jpg" alt="Girls Special Party SWEET POP! collection vol.5" class="event-featured-img" loading="lazy">
       <div class="event-featured-body">
         <div class="event-featured-header">
           <div class="event-featured-title">Girls Special Party<br>SWEET POP! collection vol.5</div>
@@ -1210,6 +1227,12 @@
           前売 ¥2,500 + 2drink &nbsp;／&nbsp; 当日 ¥3,500 + 2drink
         </div>
       </div>
+      <div class="event-featured-img-wrap">
+        <img src="assets/sweetpop.jpg" alt="Girls Special Party SWEET POP! collection vol.5" class="event-featured-img" loading="lazy">
+      </div>
+      <button class="event-featured-toggle" aria-expanded="false">
+        フライヤーを見る <span class="toggle-arrow">▼</span>
+      </button>
     </div>
     <div class="event-item fade-up">
       <div class="event-date"><div class="month">2025</div><div class="day">06.15</div><div class="dow">SUN</div></div>
@@ -1490,6 +1513,19 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ============ フィーチャードイベント アコーディオン ============ */
+document.querySelectorAll('.event-featured-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const wrap = btn.previousElementSibling;
+    const isOpen = wrap.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.querySelector('.toggle-arrow').parentElement.childNodes.forEach(n => {
+      if (n.nodeType === 3) n.textContent = isOpen ? 'フライヤーを閉じる ' : 'フライヤーを見る ';
+    });
+  });
+});
 </script>
 
 </body>
