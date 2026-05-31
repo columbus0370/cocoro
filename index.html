@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COCORO | Girls Hip Hop Dancer</title>
   <meta name="description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。お仕事のご依頼はこちらから。" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="COCORO | Girls Hip Hop Dancer" />
+  <meta property="og:description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
+  <meta property="og:url"         content="https://columbus0370.github.io/cocoro/" />
+  <meta property="og:image"       content="https://columbus0370.github.io/cocoro/assets/profile.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="COCORO | Girls Hip Hop Dancer" />
+  <meta name="twitter:description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
+  <meta name="twitter:image"       content="https://columbus0370.github.io/cocoro/assets/profile.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23080808'/><text x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-weight='bold' font-size='22' fill='%23FF1493'>C</text></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -411,6 +421,7 @@
       transition: border-color 0.3s, box-shadow 0.3s;
       background: #0a0a0a;
       position: relative;
+      cursor: pointer;
     }
     .ig-reel-wrap:hover {
       border-color: var(--pink);
@@ -418,9 +429,32 @@
     }
     .ig-reel-wrap iframe {
       width: 280px;
-      height: 498px;
+      height: 560px;
       border: none;
       display: block;
+      margin-top: 0;
+    }
+    .ig-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #1a0a0a 0%, #0d0d1a 50%, #0a0a0a 100%);
+    }
+    .ig-play-btn {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--glow-pink);
+      transition: transform 0.2s;
+    }
+    .ig-play-btn svg { margin-left: 4px; }
+    .ig-reel-wrap:hover .ig-play-btn { transform: scale(1.1); }
+    .ig-load-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px; letter-spacing: 3px;
+      color: var(--silver); opacity: 0.7;
     }
 
     .video-label {
@@ -598,6 +632,75 @@
       section { padding: 100px 60px; }
     }
     @media (min-width: 1024px) { section { padding: 120px 10%; } }
+
+    /* ============ MARQUEE ============ */
+    .marquee-wrap {
+      overflow: hidden;
+      background: var(--black-mid);
+      border-top: 1px solid rgba(192,192,192,0.15);
+      border-bottom: 1px solid rgba(192,192,192,0.15);
+      padding: 11px 0;
+      position: relative; z-index: 1;
+    }
+    .marquee-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee-scroll 22s linear infinite;
+    }
+    .marquee-track {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px; letter-spacing: 4px;
+      color: var(--silver);
+      flex-shrink: 0;
+      padding-right: 0;
+    }
+    .mq-star { color: var(--pink); margin: 0 14px; filter: drop-shadow(0 0 4px #FF1493); }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============ TIKTOK ============ */
+    .tiktok-wrap {
+      width: 280px;
+      height: 498px;
+      border: 1px solid rgba(192,192,192,0.2);
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      background: #0a0a0a;
+      position: relative;
+      cursor: pointer;
+    }
+    .tiktok-wrap:hover {
+      border-color: var(--silver);
+      box-shadow: var(--glow-silver);
+    }
+    .tiktok-wrap iframe {
+      width: 280px; height: 498px;
+      border: none; display: block;
+    }
+    .tk-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+    }
+    .tk-play-btn {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--silver);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--glow-silver);
+      transition: transform 0.2s;
+    }
+    .tk-play-btn svg { margin-left: 4px; }
+    .tiktok-wrap:hover .tk-play-btn { transform: scale(1.1); }
+    .tk-load-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px; letter-spacing: 3px;
+      color: var(--silver); opacity: 0.7;
+    }
   </style>
 </head>
 <body>
@@ -723,7 +826,12 @@
   </a>
 </section>
 
-<div class="section-divider"></div>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============ ABOUT ============ -->
 <section id="about">
@@ -754,7 +862,12 @@
   <div class="about-graphic-text fade-up">DANCE<br>WITH<br>ME</div>
 </section>
 
-<div class="section-divider"></div>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============ DANCE VIDEOS ============ -->
 <section id="videos">
@@ -770,13 +883,12 @@
 
     <div class="video-card fade-up">
       <div class="ig-reel-wrap">
-        <iframe
-          src="https://www.instagram.com/reel/DXMnmlzAdqF/embed/"
-          width="280" height="498"
-          frameborder="0" scrolling="no"
-          allowtransparency="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        <div class="ig-placeholder" onclick="loadIgReel(this,'DXMnmlzAdqF')">
+          <div class="ig-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="ig-load-label">TAP TO PLAY</div>
+        </div>
       </div>
       <div class="video-label">
         <strong>Dance Performance</strong>COCORO - Reel
@@ -785,13 +897,12 @@
 
     <div class="video-card fade-up" style="transition-delay:0.1s">
       <div class="ig-reel-wrap">
-        <iframe
-          src="https://www.instagram.com/reel/DS7B7lcgYHM/embed/"
-          width="280" height="498"
-          frameborder="0" scrolling="no"
-          allowtransparency="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        <div class="ig-placeholder" onclick="loadIgReel(this,'DS7B7lcgYHM')">
+          <div class="ig-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="ig-load-label">TAP TO PLAY</div>
+        </div>
       </div>
       <div class="video-label">
         <strong>2025 まとめ動画</strong>Year in Review
@@ -800,23 +911,56 @@
 
     <div class="video-card fade-up" style="transition-delay:0.2s">
       <div class="ig-reel-wrap">
-        <iframe
-          src="https://www.instagram.com/reel/DPIqwL4AcFF/embed/"
-          width="280" height="498"
-          frameborder="0" scrolling="no"
-          allowtransparency="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        <div class="ig-placeholder" onclick="loadIgReel(this,'DPIqwL4AcFF')">
+          <div class="ig-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF1493"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="ig-load-label">TAP TO PLAY</div>
+        </div>
       </div>
       <div class="video-label">
         <strong>Dance Reel</strong>Girls Hip Hop Style
       </div>
     </div>
 
+
+    <div class="video-card fade-up" style="transition-delay:0.3s">
+      <div class="tiktok-wrap">
+        <div class="tk-placeholder" onclick="loadTkVideo(this,'7639319578283134216')">
+          <div class="tk-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#C0C0C0"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="tk-load-label">TAP TO PLAY</div>
+        </div>
+      </div>
+      <div class="video-label">
+        <strong>TikTok</strong>COCORO - Dance Clip
+      </div>
+    </div>
+
+    <div class="video-card fade-up" style="transition-delay:0.4s">
+      <div class="tiktok-wrap">
+        <div class="tk-placeholder" onclick="loadTkVideo(this,'7640524704478022920')">
+          <div class="tk-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#C0C0C0"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="tk-load-label">TAP TO PLAY</div>
+        </div>
+      </div>
+      <div class="video-label">
+        <strong>TikTok</strong>COCORO - Dance Clip
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============ ACTIVITY ============ -->
 <section id="activity">
@@ -845,7 +989,12 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============ EVENT ============ -->
 <section id="event">
@@ -875,7 +1024,12 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> Y2K CHROME <span class="mq-star">✦</span> NEON GLOW <span class="mq-star">✦</span>&nbsp;</span>
+  </div>
+</div>
 
 <!-- ============ CONTACT ============ -->
 <section id="contact">
@@ -890,12 +1044,11 @@
       </svg>
       <span>INSTAGRAM</span>
     </a>
-    <a href="https://www.threads.net/@cocoro_on_02" target="_blank" class="sns-btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C7 2 4 5.5 4 10C4 14 6.5 17 10 18.5L9 22H15L14 18.5C17.5 17 20 14 20 10C20 5.5 17 2 12 2Z" stroke="#C0C0C0" stroke-width="1.5"/>
-        <path d="M10 10C10 8.5 11 8 12 8C13 8 14 8.5 14 10C14 12 12 13 12 13" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round"/>
+    <a href="https://x.com/cocoro_on_02" target="_blank" class="sns-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#C0C0C0">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.1 2.25h6.945l4.265 5.634 4.934-5.634Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
       </svg>
-      <span>THREADS</span>
+      <span>X</span>
     </a>
     <a href="https://www.tiktok.com/@cocoro_on_02" target="_blank" class="sns-btn">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -927,9 +1080,9 @@
           <circle cx="17.5" cy="6.5" r="1" fill="#C0C0C0"/>
         </svg>
       </a>
-      <a href="https://www.threads.net/@cocoro_on_02" target="_blank" aria-label="Threads">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C7 2 4 5.5 4 10C4 14 6.5 17 10 18.5L9 22H15L14 18.5C17.5 17 20 14 20 10C20 5.5 17 2 12 2Z" stroke="#C0C0C0" stroke-width="1.5"/>
+      <a href="https://x.com/cocoro_on_02" target="_blank" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C0C0C0">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.1 2.25h6.945l4.265 5.634 4.934-5.634Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
         </svg>
       </a>
       <a href="https://www.tiktok.com/@cocoro_on_02" target="_blank" aria-label="TikTok">
@@ -943,6 +1096,33 @@
 </footer>
 
 <script>
+/* ============ 動画遅延読み込み ============ */
+function loadIgReel(el, reelId) {
+  const wrap = el.closest('.ig-reel-wrap');
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.instagram.com/reel/' + reelId + '/embed/';
+  iframe.width = '280';
+  iframe.height = '560';
+  iframe.frameBorder = '0';
+  iframe.scrolling = 'no';
+  iframe.setAttribute('allowtransparency', 'true');
+  iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+  wrap.innerHTML = '';
+  wrap.appendChild(iframe);
+}
+
+function loadTkVideo(el, videoId) {
+  const wrap = el.closest('.tiktok-wrap');
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.tiktok.com/embed/v2/' + videoId;
+  iframe.width = '280';
+  iframe.height = '498';
+  iframe.frameBorder = '0';
+  iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+  wrap.innerHTML = '';
+  wrap.appendChild(iframe);
+}
+
 /* ============ グリッターCanvas（改良版） ============ */
 const canvas = document.getElementById('glitter-canvas');
 const ctx = canvas.getContext('2d');
