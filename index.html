@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COCORO | Girls Hip Hop Dancer</title>
-  <meta name="description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。お仕事のご依頼はこちらから。" />
+  <title>COCORO | Girls HipHop Dancer</title>
+  <meta name="description" content="COCORO - Sproject所属 Girls HipHop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。お仕事のご依頼はこちらから。" />
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="COCORO | Girls Hip Hop Dancer" />
-  <meta property="og:description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
+  <meta property="og:title"       content="COCORO | Girls HipHop Dancer" />
+  <meta property="og:description" content="COCORO - Sproject所属 Girls HipHop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
   <meta property="og:url"         content="https://columbus0370.github.io/cocoro/" />
   <meta property="og:image"       content="https://columbus0370.github.io/cocoro/assets/profile.png" />
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="COCORO | Girls Hip Hop Dancer" />
-  <meta name="twitter:description" content="COCORO - Sproject所属 Girls Hip Hop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
+  <meta name="twitter:title"       content="COCORO | Girls HipHop Dancer" />
+  <meta name="twitter:description" content="COCORO - Sproject所属 Girls HipHop Dancer。大阪を拠点に活動するダンサーCOCOROのオフィシャルサイト。" />
   <meta name="twitter:image"       content="https://columbus0370.github.io/cocoro/assets/profile.png" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23080808'/><text x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-weight='bold' font-size='22' fill='%23FF1493'>C</text></svg>" />
 
@@ -180,24 +180,19 @@
       50%      { transform: translateY(-8px) rotate(3deg); }
     }
 
-    /* ダンサーシルエット */
-    .hero-dancer {
-      position: absolute; right: 0; bottom: 0;
-      height: 78%; width: auto; object-fit: contain;
-      mix-blend-mode: screen; opacity: 0.6;
-      pointer-events: none; z-index: 1;
-    }
     /* グリッタースプラッシュ装飾 */
     .glitter-deco {
       position: absolute; mix-blend-mode: screen;
       pointer-events: none; z-index: 2;
     }
-    /* COCOROロゴ画像 */
-    .hero-logo-img {
-      width: 100%; max-width: 360px; height: auto; display: block;
-      mix-blend-mode: screen;
-      filter: drop-shadow(0 0 14px rgba(255,20,147,0.5));
-      margin-bottom: -8px;
+    /* COCOROロゴ — 背景装飾 */
+    .hero-logo-bg {
+      position: absolute;
+      bottom: 28%; left: 50%;
+      transform: translateX(-50%);
+      width: 110%; max-width: 480px; height: auto;
+      mix-blend-mode: screen; opacity: 0.45;
+      pointer-events: none; z-index: 1;
     }
 
     /* COCOROタイトル */
@@ -969,8 +964,8 @@
 <section id="hero">
   <div class="hero-bg"></div>
 
-  <!-- ダンサーシルエット -->
-  <img src="assets/hero-bg.png" alt="" class="hero-dancer" aria-hidden="true" loading="eager">
+  <!-- COCOROロゴ（背景装飾） -->
+  <img src="assets/logo-cocoro.png" alt="" class="hero-logo-bg" aria-hidden="true" loading="eager">
 
   <!-- グリッタースプラッシュ（左上） -->
   <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-2%;left:-50px;width:200px;opacity:0.35;" aria-hidden="true" loading="eager">
@@ -1061,16 +1056,14 @@
     <div class="hero-profile-ring-3"></div>
   </div>
 
-  <!-- タイトル -->
-  <div class="hero-title">
-    <img src="assets/logo-cocoro.png" alt="COCORO" class="hero-logo-img" loading="eager">
-  </div>
-  <div class="hero-subtitle">Girls Hip Hop Dancer</div>
+  <!-- タイトル（空コンテナ：ロゴは背景装飾として配置済み） -->
+  <div class="hero-title"></div>
+  <div class="hero-subtitle">Girls HipHop Dancer</div>
 
   <!-- キャッチコピー -->
   <div class="hero-copy">
     <p class="hero-copy-main">踊ることでしか、<br>自分を表現できない。</p>
-    <p class="hero-copy-sub">GIRLS HIP HOPを軸に、<br>自分らしいスタイルでステージに立ち続ける。</p>
+    <p class="hero-copy-sub">GIRLS HIPHOPを軸に、<br>自分らしいスタイルでステージに立ち続ける。</p>
   </div>
 
   <a href="#about" class="btn-outline">
@@ -1081,8 +1074,8 @@
 
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1098,11 +1091,11 @@
     </div>
     <div class="about-text fade-up">
       <h3>温 / COCORO</h3>
-      <p>大阪出身のGIRLS HIP HOPダンサー。<br>幼い頃からダンスに魅了され、様々なジャンルを経験後、GIRLS HIP HOPに出会う。</p>
+      <p>大阪出身のGIRLS HIPHOPダンサー。<br>幼い頃からダンスに魅了され、様々なジャンルを経験後、GIRLS HIPHOPに出会う。</p>
       <p>女性らしさと強さを兼ね備えたスタイルを武器に、Sproject所属メンバーとしてチーム活動・ソロパフォーマンス・振付・WSなど幅広く活動中。</p>
       <div class="about-tags">
         <span class="about-tag">SPROJECT</span>
-        <span class="about-tag">GIRLS HIP HOP</span>
+        <span class="about-tag">GIRLS HIPHOP</span>
         <span class="about-tag">OSAKA</span>
         <span class="about-tag">CHOREOGRAPHER</span>
       </div>
@@ -1119,8 +1112,8 @@
 
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1159,7 +1152,7 @@
         <iframe src="https://www.instagram.com/reel/DPIqwL4AcFF/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
       <div class="video-label">
-        <strong>Dance Reel</strong>Girls Hip Hop Style
+        <strong>Dance Reel</strong>Girls HipHop Style
       </div>
     </div>
 
@@ -1191,8 +1184,8 @@
 
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1215,7 +1208,7 @@
         </svg>
       </div>
       <h4>LESSON</h4>
-      <p>関西エリアで<br>Girls Hip Hop<br>クラスを担当<br>（不定期WS も開催）</p>
+      <p>関西エリアで<br>Girls HipHop<br>クラスを担当<br>（不定期WS も開催）</p>
     </div>
     <div class="activity-card fade-up" style="transition-delay:0.2s">
       <div class="activity-icon">⭐</div>
@@ -1232,8 +1225,8 @@
 
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1285,7 +1278,7 @@
     </div>
     <div class="event-item fade-up" style="transition-delay:0.2s">
       <div class="event-date"><div class="month">2025</div><div class="day">08.10</div><div class="dow">SUN</div></div>
-      <div class="event-info"><h4>Girls Hip Hop WS</h4><p>大阪スタジオ（詳細後日）</p></div>
+      <div class="event-info"><h4>Girls HipHop WS</h4><p>大阪スタジオ（詳細後日）</p></div>
       <span class="event-badge workshop">WORKSHOP</span>
     </div>
   </div>
@@ -1293,8 +1286,8 @@
 
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIP HOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
