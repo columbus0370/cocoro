@@ -405,6 +405,7 @@
     /* Instagram iframeラッパー */
     .ig-reel-wrap {
       width: 280px;
+      height: 498px;
       border: 1px solid rgba(255,20,147,0.3);
       overflow: hidden;
       transition: border-color 0.3s, box-shadow 0.3s;
@@ -415,11 +416,11 @@
       border-color: var(--pink);
       box-shadow: var(--glow-pink);
     }
-    /* iframeのInstagram埋め込みをリール縦型に合わせる */
     .ig-reel-wrap iframe {
-      width: 280px !important;
-      min-width: unset !important;
-      border: none !important;
+      width: 280px;
+      height: 498px;
+      border: none;
+      display: block;
     }
 
     .video-label {
@@ -765,17 +766,17 @@
     </a>
   </div>
 
-  <script async src="https://www.instagram.com/embed.js"></script>
-
   <div class="videos-scroll-wrapper">
 
     <div class="video-card fade-up">
       <div class="ig-reel-wrap">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DXMnmlzAdqF/?utm_source=ig_embed"
-          data-instgrm-version="14"
-          style="background:#000;border:0;margin:0;max-width:280px;min-width:280px;width:280px;padding:0;">
-        </blockquote>
+        <iframe
+          src="https://www.instagram.com/reel/DXMnmlzAdqF/embed/"
+          width="280" height="498"
+          frameborder="0" scrolling="no"
+          allowtransparency="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
       </div>
       <div class="video-label">
         <strong>Dance Performance</strong>COCORO - Reel
@@ -784,11 +785,13 @@
 
     <div class="video-card fade-up" style="transition-delay:0.1s">
       <div class="ig-reel-wrap">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DS7B7lcgYHM/?utm_source=ig_embed"
-          data-instgrm-version="14"
-          style="background:#000;border:0;margin:0;max-width:280px;min-width:280px;width:280px;padding:0;">
-        </blockquote>
+        <iframe
+          src="https://www.instagram.com/reel/DS7B7lcgYHM/embed/"
+          width="280" height="498"
+          frameborder="0" scrolling="no"
+          allowtransparency="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
       </div>
       <div class="video-label">
         <strong>2025 まとめ動画</strong>Year in Review
@@ -797,11 +800,13 @@
 
     <div class="video-card fade-up" style="transition-delay:0.2s">
       <div class="ig-reel-wrap">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/reel/DPIqwL4AcFF/?utm_source=ig_embed"
-          data-instgrm-version="14"
-          style="background:#000;border:0;margin:0;max-width:280px;min-width:280px;width:280px;padding:0;">
-        </blockquote>
+        <iframe
+          src="https://www.instagram.com/reel/DPIqwL4AcFF/embed/"
+          width="280" height="498"
+          frameborder="0" scrolling="no"
+          allowtransparency="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
       </div>
       <div class="video-label">
         <strong>Dance Reel</strong>Girls Hip Hop Style
