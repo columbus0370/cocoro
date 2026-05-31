@@ -180,24 +180,19 @@
       50%      { transform: translateY(-8px) rotate(3deg); }
     }
 
-    /* ダンサーシルエット */
-    .hero-dancer {
-      position: absolute; right: 0; bottom: 0;
-      height: 78%; width: auto; object-fit: contain;
-      mix-blend-mode: screen; opacity: 0.6;
-      pointer-events: none; z-index: 1;
-    }
     /* グリッタースプラッシュ装飾 */
     .glitter-deco {
       position: absolute; mix-blend-mode: screen;
       pointer-events: none; z-index: 2;
     }
-    /* COCOROロゴ画像 */
-    .hero-logo-img {
-      width: 100%; max-width: 360px; height: auto; display: block;
-      mix-blend-mode: screen;
-      filter: drop-shadow(0 0 14px rgba(255,20,147,0.5));
-      margin-bottom: -8px;
+    /* COCOROロゴ — 背景装飾 */
+    .hero-logo-bg {
+      position: absolute;
+      bottom: 28%; left: 50%;
+      transform: translateX(-50%);
+      width: 110%; max-width: 480px; height: auto;
+      mix-blend-mode: screen; opacity: 0.45;
+      pointer-events: none; z-index: 1;
     }
 
     /* COCOROタイトル */
@@ -969,8 +964,8 @@
 <section id="hero">
   <div class="hero-bg"></div>
 
-  <!-- ダンサーシルエット -->
-  <img src="assets/hero-bg.png" alt="" class="hero-dancer" aria-hidden="true" loading="eager">
+  <!-- COCOROロゴ（背景装飾） -->
+  <img src="assets/logo-cocoro.png" alt="" class="hero-logo-bg" aria-hidden="true" loading="eager">
 
   <!-- グリッタースプラッシュ（左上） -->
   <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-2%;left:-50px;width:200px;opacity:0.35;" aria-hidden="true" loading="eager">
@@ -1061,10 +1056,8 @@
     <div class="hero-profile-ring-3"></div>
   </div>
 
-  <!-- タイトル -->
-  <div class="hero-title">
-    <img src="assets/logo-cocoro.png" alt="COCORO" class="hero-logo-img" loading="eager">
-  </div>
+  <!-- タイトル（空コンテナ：ロゴは背景装飾として配置済み） -->
+  <div class="hero-title"></div>
   <div class="hero-subtitle">Girls Hip Hop Dancer</div>
 
   <!-- キャッチコピー -->
