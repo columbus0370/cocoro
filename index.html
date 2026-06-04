@@ -156,11 +156,18 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 70% 90% at 75% 65%, rgba(255,20,147,0.22) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 50% at 20% 30%, rgba(192,192,192,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 30% 30% at 85% 15%, rgba(192,192,192,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 90% at 75% 65%, rgba(255,20,147,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 20% 30%, rgba(192,192,192,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 30% at 85% 15%, rgba(192,192,192,0.05) 0%, transparent 50%),
         var(--black);
       z-index: 0;
+    }
+    /* テキストエリア暗転オーバーレイ */
+    .hero-text-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 65%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(8,8,8,0.55) 40%, rgba(8,8,8,0.82) 100%);
+      z-index: 3; pointer-events: none;
     }
     /* ノイズ */
     .hero-bg::after {
@@ -212,7 +219,7 @@
       bottom: 28%; left: 50%;
       transform: translateX(-50%);
       width: 110%; max-width: 480px; height: auto;
-      mix-blend-mode: screen; opacity: 0.45;
+      mix-blend-mode: screen; opacity: 0.18;
       pointer-events: none; z-index: 1;
     }
 
@@ -982,6 +989,7 @@
     .follower-item .f-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 28px; letter-spacing: 2px;
+      white-space: nowrap;
       background: linear-gradient(135deg, #E8E8E8, #FF69B4);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1196,12 +1204,13 @@
 <!-- ============ HERO ============ -->
 <section id="hero">
   <div class="hero-bg"></div>
+  <div class="hero-text-overlay" aria-hidden="true"></div>
 
   <!-- COCOROロゴ（背景装飾） -->
   <img src="assets/logo-cocoro.png" alt="" class="hero-logo-bg" aria-hidden="true" loading="eager">
 
   <!-- グリッタースプラッシュ（左上） -->
-  <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-2%;left:-50px;width:200px;opacity:0.35;" aria-hidden="true" loading="eager">
+  <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-2%;left:-50px;width:200px;opacity:0.20;" aria-hidden="true" loading="eager">
 
   <!-- SVGチェーン -->
   <div class="hero-chain">
@@ -1334,9 +1343,14 @@
     </div>
     <div class="about-text fade-up">
       <h3>温 / COCORO</h3>
+<<<<<<< HEAD
       <p>大阪出身のGIRLS HIPHOPダンサー。<br>6歳からダンスを始め、様々なジャンルを経験後、GIRLS HIPHOPと出会う。</p>
       <p>「自分の人生で出会った色んな感情をダンスで伝えて、それが誰かの活力になればいいなと思ってます。」</p>
       <p>Sproject所属メンバーとしてチーム活動・ソロパフォーマンス・振付・WSなど幅広く活動中。コレオグラファー、アーティストとして挑戦を続けている。</p>
+=======
+      <p>人生の中で出会ったさまざまな感情を、ダンスという表現に変えて届けています。</p>
+      <p>その瞬間の想いが誰かの心に響き、日々を生きる力や新たな一歩を踏み出すきっかけになればと願っています。</p>
+>>>>>>> claude/cocoro-homepage-handoff-Irwka
       <div class="about-tags">
         <span class="about-tag">SPROJECT</span>
         <span class="about-tag">GIRLS HIPHOP</span>
@@ -1678,12 +1692,12 @@
   <!-- ④ フォロワー数ソーシャルプルーフ -->
   <div class="contact-followers fade-up">
     <div class="follower-item">
-      <div class="f-num">1,026<span style="font-size:14px">名以上</span></div>
+      <div class="f-num">1000<span style="font-size:14px">以上</span></div>
       <div class="f-label">INSTAGRAM</div>
     </div>
     <div class="follower-divider"></div>
     <div class="follower-item">
-      <div class="f-num">303<span style="font-size:14px">名以上</span></div>
+      <div class="f-num">300<span style="font-size:14px">以上</span></div>
       <div class="f-label">TIKTOK</div>
     </div>
     <div class="follower-divider"></div>
