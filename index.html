@@ -1179,6 +1179,78 @@
     .lesson-ws-note span {
       font-size: 12px; color: rgba(255,255,255,0.65); letter-spacing: 0.5px;
     }
+
+    /* ============ LOCAL VIDEO CARDS ============ */
+    .local-video-wrap {
+      width: 280px; height: 498px;
+      overflow: hidden; position: relative;
+      background: #0a0a0a;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .local-video-wrap video {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .local-video-wrap--stage {
+      border: 1px solid rgba(255,20,147,0.5);
+    }
+    .local-video-wrap--stage:hover {
+      border-color: var(--pink);
+      box-shadow: var(--glow-pink);
+    }
+    .local-video-wrap--choreo {
+      border: 1px solid rgba(192,192,192,0.2);
+    }
+    .local-video-wrap--choreo:hover {
+      border-color: var(--silver);
+      box-shadow: var(--glow-silver);
+    }
+    .local-video-badge {
+      position: absolute; top: 10px; left: 10px;
+      padding: 3px 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px; letter-spacing: 2px;
+      background: rgba(255,20,147,0.85);
+      color: #fff; border: 1px solid var(--pink);
+      pointer-events: none; z-index: 2;
+    }
+    .local-video-badge--silver {
+      background: rgba(192,192,192,0.15);
+      color: var(--silver-light);
+      border-color: var(--silver);
+    }
+
+    /* ============ ABOUT FULLBODY ============ */
+    .about-fullbody {
+      display: flex; justify-content: center;
+      margin-top: 40px;
+    }
+    .about-fullbody-frame {
+      position: relative;
+      width: 100%; max-width: 280px;
+      border: 1px solid rgba(192,192,192,0.3);
+      box-shadow: 0 0 12px rgba(192,192,192,0.18), 0 0 4px rgba(255,20,147,0.12);
+      overflow: hidden; background: #fff;
+      transition: box-shadow 0.3s;
+    }
+    .about-fullbody-frame:hover {
+      box-shadow: 0 0 24px rgba(192,192,192,0.35), 0 0 8px rgba(255,20,147,0.2);
+    }
+    .about-fullbody-frame img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+    }
+    .about-fullbody-label {
+      padding: 10px 14px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px; letter-spacing: 3px;
+      color: var(--silver-dark);
+      background: var(--black); text-align: center;
+      border-top: 1px solid rgba(192,192,192,0.15);
+    }
+    @media (min-width: 768px) {
+      .about-fullbody { justify-content: flex-start; margin-top: 32px; }
+      .about-fullbody-frame { max-width: 220px; }
+    }
   </style>
 </head>
 <body>
@@ -1400,6 +1472,16 @@
     </div>
   </div>
 
+  <div class="about-fullbody fade-up">
+    <div class="about-fullbody-frame">
+      <img
+        src="assets/全身1.jpg"
+        alt="COCORO フルボディショット"
+        loading="lazy"
+      >
+      <div class="about-fullbody-label">FULL BODY / SPROJECT GIRLS</div>
+    </div>
+  </div>
   <div class="about-graphic-text fade-up">DANCE<br>WITH<br>ME</div>
 </section>
 
@@ -1422,6 +1504,22 @@
   </div>
 
   <div class="videos-scroll-wrapper">
+
+    <div class="video-card video-card--stage fade-up">
+      <div class="local-video-wrap local-video-wrap--stage">
+        <video
+          src="assets/ナンバー出演1.mp4"
+          preload="none"
+          controls
+          playsinline
+          muted
+        ></video>
+        <div class="local-video-badge">STAGE</div>
+      </div>
+      <div class="video-label">
+        <strong>Number Performance</strong>ナンバー出演 / Stage Show
+      </div>
+    </div>
 
     <div class="video-card fade-up">
       <div class="ig-reel-wrap">
@@ -1465,6 +1563,40 @@
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
+      </div>
+    </div>
+
+    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.5s">
+      <div class="local-video-wrap local-video-wrap--choreo">
+        <video
+          src="assets/コレオ1.mp4"
+          preload="none"
+          controls
+          playsinline
+          loop
+          muted
+        ></video>
+        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
+      </div>
+      <div class="video-label">
+        <strong>Choreography</strong>振付 / WS Practice
+      </div>
+    </div>
+
+    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.6s">
+      <div class="local-video-wrap local-video-wrap--choreo">
+        <video
+          src="assets/コレオ2.mp4"
+          preload="none"
+          controls
+          playsinline
+          loop
+          muted
+        ></video>
+        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
+      </div>
+      <div class="video-label">
+        <strong>Choreography</strong>振付 / WS Practice
       </div>
     </div>
 
