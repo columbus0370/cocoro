@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/user/cocoro/.claude/auto-merge-main.sh",
+            "timeout": 60,
+            "statusMessage": "mainへ自動マージ中..."
+          }
+        ]
+      }
+    ]
+  }
+}
