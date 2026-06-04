@@ -80,69 +80,6 @@
       z-index: 0;
     }
 
-    /* ============ NAV ============ */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
-    }
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 4px;
-      background: linear-gradient(135deg, #E8E8E8, #FF69B4, #C0C0C0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(0 0 6px rgba(255,105,180,0.8));
-    }
-    .nav-menu-btn {
-      width: 44px; height: 44px;
-      border: 1.5px solid var(--pink);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      background: transparent;
-      box-shadow: var(--glow-pink);
-      transition: all 0.3s;
-    }
-    .nav-menu-btn span { display: block; width: 18px; height: 1.5px; background: var(--pink); }
-    .nav-menu-btn:hover { background: var(--pink); }
-    .nav-menu-btn:hover span { background: var(--white); }
-
-    .nav-drawer {
-      position: fixed; inset: 0;
-      background: rgba(8,8,8,0.97);
-      z-index: 200;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      gap: 40px;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.77,0,0.175,1);
-    }
-    .nav-drawer.open { transform: translateX(0); }
-    .nav-drawer a {
-      font-family: 'Boogaloo', cursive;
-      font-size: 40px; letter-spacing: 6px;
-      color: var(--white);
-      transition: color 0.2s, text-shadow 0.2s;
-    }
-    .nav-drawer a:hover { color: var(--pink); text-shadow: var(--glow-pink); }
-    .nav-drawer-close {
-      position: absolute; top: 20px; right: 24px;
-      font-size: 32px; color: var(--silver);
-      cursor: pointer; background: none; border: none;
-    }
-
     /* ============ HERO ============ */
     #hero {
       position: relative;
@@ -1258,22 +1195,6 @@
 <canvas id="glitter-canvas"></canvas>
 <div id="scroll-progress"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">COCORO</div>
-  <button class="nav-menu-btn" id="menuBtn" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="nav-drawer" id="navDrawer">
-  <button class="nav-drawer-close" id="drawerClose">✕</button>
-  <a href="#about"    onclick="closeDrawer()">ABOUT</a>
-  <a href="#videos"   onclick="closeDrawer()">VIDEOS</a>
-  <a href="#lesson"   onclick="closeDrawer()">LESSON</a>
-  <a href="#activity" onclick="closeDrawer()">ACTIVITY</a>
-  <a href="#event"    onclick="closeDrawer()">EVENT</a>
-  <a href="#contact"  onclick="closeDrawer()">CONTACT</a>
-</div>
 
 <!-- ============ HERO ============ -->
 <section id="hero">
@@ -1478,8 +1399,8 @@
 <!-- ⑧ マーキー②: ABOUT後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">COCORO <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">COCORO <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1499,10 +1420,10 @@
       <div class="local-video-wrap local-video-wrap--stage">
         <video
           src="assets/ナンバー出演1.mp4"
+          poster="assets/LINE_ALBUM_宣材写真、ナンバー出演写真等_260604_5.jpg"
           preload="none"
           controls
           playsinline
-          muted
         ></video>
         <div class="local-video-badge">STAGE</div>
       </div>
@@ -1511,7 +1432,41 @@
       </div>
     </div>
 
-    <div class="video-card fade-up">
+    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.1s">
+      <div class="local-video-wrap local-video-wrap--choreo">
+        <video
+          src="assets/コレオ1.mp4"
+          poster="assets/LINE_ALBUM_宣材写真、ナンバー出演写真等_260604_9.jpg"
+          preload="none"
+          controls
+          playsinline
+          loop
+        ></video>
+        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
+      </div>
+      <div class="video-label">
+        <strong>Choreography</strong>振付 / WS Practice
+      </div>
+    </div>
+
+    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.2s">
+      <div class="local-video-wrap local-video-wrap--choreo">
+        <video
+          src="assets/コレオ2.mp4"
+          poster="assets/LINE_ALBUM_宣材写真、ナンバー出演写真等_260604_3.jpg"
+          preload="none"
+          controls
+          playsinline
+          loop
+        ></video>
+        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
+      </div>
+      <div class="video-label">
+        <strong>Choreography</strong>振付 / WS Practice
+      </div>
+    </div>
+
+    <div class="video-card fade-up" style="transition-delay:0.3s">
       <div class="ig-reel-wrap">
         <iframe src="https://www.instagram.com/reel/DXMnmlzAdqF/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
@@ -1520,7 +1475,7 @@
       </div>
     </div>
 
-    <div class="video-card fade-up" style="transition-delay:0.1s">
+    <div class="video-card fade-up" style="transition-delay:0.4s">
       <div class="ig-reel-wrap">
         <iframe src="https://www.instagram.com/reel/DS7B7lcgYHM/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
@@ -1529,7 +1484,7 @@
       </div>
     </div>
 
-    <div class="video-card fade-up" style="transition-delay:0.2s">
+    <div class="video-card fade-up" style="transition-delay:0.5s">
       <div class="ig-reel-wrap">
         <iframe src="https://www.instagram.com/reel/DPIqwL4AcFF/embed/" width="280" height="560" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
@@ -1538,7 +1493,7 @@
       </div>
     </div>
 
-    <div class="video-card fade-up" style="transition-delay:0.3s">
+    <div class="video-card fade-up" style="transition-delay:0.6s">
       <div class="tiktok-wrap">
         <iframe src="https://www.tiktok.com/embed/v2/7639319578283134216" width="300" height="498" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
@@ -1547,46 +1502,12 @@
       </div>
     </div>
 
-    <div class="video-card fade-up" style="transition-delay:0.4s">
+    <div class="video-card fade-up" style="transition-delay:0.7s">
       <div class="tiktok-wrap">
         <iframe src="https://www.tiktok.com/embed/v2/7640524704478022920" width="300" height="498" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
       </div>
       <div class="video-label">
         <strong>TikTok</strong>COCORO - Dance Clip
-      </div>
-    </div>
-
-    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.5s">
-      <div class="local-video-wrap local-video-wrap--choreo">
-        <video
-          src="assets/コレオ1.mp4"
-          preload="none"
-          controls
-          playsinline
-          loop
-          muted
-        ></video>
-        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
-      </div>
-      <div class="video-label">
-        <strong>Choreography</strong>振付 / WS Practice
-      </div>
-    </div>
-
-    <div class="video-card video-card--choreo fade-up" style="transition-delay:0.6s">
-      <div class="local-video-wrap local-video-wrap--choreo">
-        <video
-          src="assets/コレオ2.mp4"
-          preload="none"
-          controls
-          playsinline
-          loop
-          muted
-        ></video>
-        <div class="local-video-badge local-video-badge--silver">CHOREO</div>
-      </div>
-      <div class="video-label">
-        <strong>Choreography</strong>振付 / WS Practice
       </div>
     </div>
 
@@ -2069,15 +1990,6 @@ document.addEventListener('visibilitychange', () => {
   else animateParticles();
 });
 
-/* ============ NAV ============ */
-const menuBtn    = document.getElementById('menuBtn');
-const navDrawer  = document.getElementById('navDrawer');
-const drawerClose = document.getElementById('drawerClose');
-menuBtn.addEventListener('click', () => navDrawer.classList.add('open'));
-drawerClose.addEventListener('click', closeDrawer);
-navDrawer.addEventListener('click', e => { if (e.target === navDrawer) closeDrawer(); });
-function closeDrawer() { navDrawer.classList.remove('open'); }
-window.closeDrawer = closeDrawer;
 
 /* ============ スクロールアニメーション ============ */
 const observer = new IntersectionObserver((entries) => {
