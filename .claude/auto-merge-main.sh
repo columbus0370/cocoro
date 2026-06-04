@@ -30,6 +30,10 @@ if [ "$AHEAD_MAIN" -eq 0 ]; then
   exit 0
 fi
 
+# git config を設定（Unverifiedコミット防止）
+git -C "$REPO" config user.email noreply@anthropic.com
+git -C "$REPO" config user.name Claude
+
 # mainへマージ＆push
 git -C "$REPO" checkout main 2>/dev/null && \
   git -C "$REPO" merge "$BRANCH" --no-ff -m "Auto-merge $BRANCH into main" 2>/dev/null && \
