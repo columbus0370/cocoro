@@ -16,6 +16,27 @@
   <meta name="twitter:image"       content="https://columbus0370.github.io/cocoro/assets/profile.png" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23080808'/><text x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-weight='bold' font-size='22' fill='%23FF1493'>C</text></svg>" />
 
+  <!-- ⑦ JSON-LD 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "COCORO",
+    "alternateName": "温",
+    "description": "大阪を拠点に活動するGirls HipHopダンサー。Sproject所属。振付・レッスン・パフォーマンス・メディア出演など幅広く活動中。",
+    "url": "https://columbus0370.github.io/cocoro/",
+    "image": "https://columbus0370.github.io/cocoro/assets/profile.png",
+    "jobTitle": "Girls HipHop Dancer / Choreographer",
+    "worksFor": { "@type": "Organization", "name": "Sproject" },
+    "address": { "@type": "PostalAddress", "addressRegion": "大阪府", "addressCountry": "JP" },
+    "sameAs": [
+      "https://www.instagram.com/cocoro_on_02/",
+      "https://x.com/cocoro_on_02",
+      "https://www.tiktok.com/@cocoro_on_02"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Dancing+Script:wght@700&family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet" />
@@ -869,7 +890,7 @@
     #hero .hero-title         { animation: hero-enter 1s 0.35s ease both; }
     #hero .hero-subtitle      { animation: hero-enter 1s 0.48s ease both; }
     #hero .hero-copy          { animation: hero-enter 1s 0.62s ease both; }
-    #hero .btn-outline        { animation: hero-enter 1s 0.82s ease both; align-self: flex-start; }
+    #hero .hero-cta-group     { animation: hero-enter 1s 0.82s ease both; align-self: flex-start; }
 
     /* ============ Typewriter ============ */
     @keyframes char-appear {
@@ -916,6 +937,88 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+
+    /* ============ Hero CTA 2ボタン並列 ============ */
+    .hero-cta-group {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      position: relative; z-index: 5;
+    }
+    .btn-filled {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px; letter-spacing: 3px;
+      border: 1.5px solid var(--pink);
+      cursor: pointer; transition: all 0.3s;
+      box-shadow: var(--glow-pink);
+    }
+    .btn-filled:hover { transform: translateY(-2px); box-shadow: 0 0 20px #FF1493, 0 0 50px #FF149360; }
+
+    /* ============ Past Events ============ */
+    .event-past-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px; letter-spacing: 4px;
+      color: var(--silver-dark);
+      margin: 20px 0 8px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .event-past-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, rgba(136,136,136,0.3), transparent);
+    }
+    .event-item.past { opacity: 0.45; }
+    .event-item.past:hover { opacity: 0.7; }
+
+    /* ============ Follower Badge ============ */
+    .contact-followers {
+      display: flex; justify-content: center; gap: 24px;
+      margin-bottom: 32px;
+    }
+    .follower-item {
+      text-align: center;
+    }
+    .follower-item .f-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px; letter-spacing: 2px;
+      background: linear-gradient(135deg, #E8E8E8, #FF69B4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .follower-item .f-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 9px; letter-spacing: 3px; color: var(--silver-dark);
+    }
+    .follower-divider {
+      width: 1px; background: rgba(192,192,192,0.2); align-self: stretch;
+    }
+
+    /* ============ Contact Email Option ============ */
+    .contact-email-cta {
+      display: flex; align-items: center; gap: 16px;
+      width: 100%; max-width: 400px;
+      margin: 0 auto 16px;
+      padding: 18px 28px;
+      background: rgba(192,192,192,0.04);
+      border: 1px solid rgba(192,192,192,0.25);
+      color: var(--white);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .contact-email-cta:hover {
+      border-color: var(--silver);
+      background: rgba(192,192,192,0.08);
+      box-shadow: 0 0 16px rgba(192,192,192,0.2);
+      transform: translateY(-2px);
+    }
+    .contact-email-cta-text { flex: 1; }
+    .contact-email-cta-text strong {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px; letter-spacing: 2px; margin-bottom: 4px;
+    }
+    .contact-email-cta-text span { font-size: 11px; color: rgba(255,255,255,0.45); }
 
     /* ============ TIKTOK ============ */
     .tiktok-wrap {
@@ -1056,8 +1159,10 @@
     <div class="hero-profile-ring-3"></div>
   </div>
 
-  <!-- タイトル（空コンテナ：ロゴは背景装飾として配置済み） -->
-  <div class="hero-title"></div>
+  <!-- ③ タイトル：COCORO 名前を明示 -->
+  <div class="hero-title">
+    <div class="hero-title-main">COCORO</div>
+  </div>
   <div class="hero-subtitle">Girls HipHop Dancer</div>
 
   <!-- キャッチコピー -->
@@ -1066,12 +1171,20 @@
     <p class="hero-copy-sub">GIRLS HIPHOPを軸に、<br>自分らしいスタイルでステージに立ち続ける。</p>
   </div>
 
-  <a href="#about" class="btn-outline">
-    VIEW MORE
-    <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-  </a>
+  <!-- ① CTA 2ボタン -->
+  <div class="hero-cta-group">
+    <a href="#contact" class="btn-filled">
+      お仕事の依頼はこちら
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>
+    <a href="#about" class="btn-outline">
+      VIEW MORE
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </a>
+  </div>
 </section>
 
+<!-- ⑧ マーキー①: HERO後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
     <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
@@ -1110,10 +1223,11 @@
   <div class="about-graphic-text fade-up">DANCE<br>WITH<br>ME</div>
 </section>
 
+<!-- ⑧ マーキー②: ABOUT後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span> COCORO <span class="mq-star">✦</span> 温 <span class="mq-star">✦</span> 大阪出身 <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> 女性らしさと強さ <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1182,10 +1296,11 @@
   </div>
 </section>
 
+<!-- ⑧ マーキー③: VIDEOS後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">DANCE REEL <span class="mq-star">✦</span> INSTAGRAM <span class="mq-star">✦</span> TIKTOK <span class="mq-star">✦</span> PERFORMANCE <span class="mq-star">✦</span> STYLE <span class="mq-star">✦</span> NOW WATCHING <span class="mq-star">✦</span> DANCE REEL <span class="mq-star">✦</span> INSTAGRAM <span class="mq-star">✦</span> TIKTOK <span class="mq-star">✦</span> PERFORMANCE <span class="mq-star">✦</span> STYLE <span class="mq-star">✦</span> NOW WATCHING <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">DANCE REEL <span class="mq-star">✦</span> INSTAGRAM <span class="mq-star">✦</span> TIKTOK <span class="mq-star">✦</span> PERFORMANCE <span class="mq-star">✦</span> STYLE <span class="mq-star">✦</span> NOW WATCHING <span class="mq-star">✦</span> DANCE REEL <span class="mq-star">✦</span> INSTAGRAM <span class="mq-star">✦</span> TIKTOK <span class="mq-star">✦</span> PERFORMANCE <span class="mq-star">✦</span> STYLE <span class="mq-star">✦</span> NOW WATCHING <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1193,10 +1308,11 @@
 <section id="activity">
   <div class="section-title fade-up">ACTIVITY</div>
   <div class="activity-grid">
+    <!-- ⑥ ACTIVITY 実績詳細化 -->
     <div class="activity-card fade-up">
       <div class="activity-icon">👑</div>
       <h4>TEAM</h4>
-      <p>Sproject所属<br>関西を中心に<br>イベント・ショーケースに出演</p>
+      <p>Sproject所属<br>関西を中心に<br>イベント・ショーケース<br>年10本以上出演</p>
     </div>
     <div class="activity-card fade-up" style="transition-delay:0.1s">
       <div class="activity-icon">
@@ -1208,25 +1324,26 @@
         </svg>
       </div>
       <h4>LESSON</h4>
-      <p>関西エリアで<br>Girls HipHop<br>クラスを担当<br>（不定期WS も開催）</p>
+      <p>関西エリアで<br>Girls HipHop<br>クラス担当<br>単発WS・出張WS<br>依頼受付中</p>
     </div>
     <div class="activity-card fade-up" style="transition-delay:0.2s">
       <div class="activity-icon">⭐</div>
       <h4>CHOREOGRAPHY</h4>
-      <p>チーム作品・<br>ナンバー出演<br>アーティストバック<br>振付提供 など</p>
+      <p>チーム作品・<br>アーティストバック<br>発表会ナンバー<br>振付提供 受付中</p>
     </div>
     <div class="activity-card fade-up" style="transition-delay:0.3s">
       <div class="activity-icon">🦋</div>
       <h4>MEDIA</h4>
-      <p>MV出演 / CM出演<br>イベントMC<br>モデル活動<br>など幅広く活動中</p>
+      <p>MV・CM出演<br>イベントMC<br>モデル活動<br>撮影・コラボ<br>お気軽にご相談を</p>
     </div>
   </div>
 </section>
 
+<!-- ⑧ マーキー④: ACTIVITY後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">LESSON <span class="mq-star">✦</span> WS受付中 <span class="mq-star">✦</span> CHOREOGRAPHY <span class="mq-star">✦</span> BOOKING OPEN <span class="mq-star">✦</span> TEAM <span class="mq-star">✦</span> MEDIA <span class="mq-star">✦</span> LESSON <span class="mq-star">✦</span> WS受付中 <span class="mq-star">✦</span> CHOREOGRAPHY <span class="mq-star">✦</span> BOOKING OPEN <span class="mq-star">✦</span> TEAM <span class="mq-star">✦</span> MEDIA <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">LESSON <span class="mq-star">✦</span> WS受付中 <span class="mq-star">✦</span> CHOREOGRAPHY <span class="mq-star">✦</span> BOOKING OPEN <span class="mq-star">✦</span> TEAM <span class="mq-star">✦</span> MEDIA <span class="mq-star">✦</span> LESSON <span class="mq-star">✦</span> WS受付中 <span class="mq-star">✦</span> CHOREOGRAPHY <span class="mq-star">✦</span> BOOKING OPEN <span class="mq-star">✦</span> TEAM <span class="mq-star">✦</span> MEDIA <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1266,28 +1383,31 @@
         <span class="toggle-label">フライヤーを見る</span><span class="toggle-arrow">▼</span>
       </button>
     </div>
-    <div class="event-item fade-up">
+    <!-- ② PAST EVENTS ラベル付きで整理 -->
+    <div class="event-past-label fade-up">PAST EVENTS</div>
+    <div class="event-item past fade-up">
       <div class="event-date"><div class="month">2025</div><div class="day">06.15</div><div class="dow">SUN</div></div>
-      <div class="event-info"><h4>SPROJECT GIRLS SHOWCASE</h4><p>会場未定（大阪）</p></div>
+      <div class="event-info"><h4>SPROJECT GIRLS SHOWCASE</h4><p>大阪</p></div>
       <span class="event-badge showcase">SHOWCASE</span>
     </div>
-    <div class="event-item fade-up" style="transition-delay:0.1s">
+    <div class="event-item past fade-up" style="transition-delay:0.1s">
       <div class="event-date"><div class="month">2025</div><div class="day">07.20</div><div class="dow">SUN</div></div>
-      <div class="event-info"><h4>OSAKA DANCE FESTIVAL 2025</h4><p>大阪市内会場</p></div>
+      <div class="event-info"><h4>OSAKA DANCE FESTIVAL 2025</h4><p>大阪市内</p></div>
       <span class="event-badge event">EVENT</span>
     </div>
-    <div class="event-item fade-up" style="transition-delay:0.2s">
+    <div class="event-item past fade-up" style="transition-delay:0.2s">
       <div class="event-date"><div class="month">2025</div><div class="day">08.10</div><div class="dow">SUN</div></div>
-      <div class="event-info"><h4>Girls HipHop WS</h4><p>大阪スタジオ（詳細後日）</p></div>
+      <div class="event-info"><h4>Girls HipHop WS</h4><p>大阪スタジオ</p></div>
       <span class="event-badge workshop">WORKSHOP</span>
     </div>
   </div>
 </section>
 
+<!-- ⑧ マーキー⑤: EVENT後 -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
-    <span class="marquee-track">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
-    <span class="marquee-track" aria-hidden="true">GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span> GIRLS HIPHOP <span class="mq-star">✦</span> OSAKA <span class="mq-star">✦</span> CHOREOGRAPHER <span class="mq-star">✦</span> SPROJECT <span class="mq-star">✦</span> DANCER <span class="mq-star">✦</span> PERFORMER <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track">SWEET POP! <span class="mq-star">✦</span> SHOWCASE <span class="mq-star">✦</span> WORKSHOP <span class="mq-star">✦</span> EVENT <span class="mq-star">✦</span> LIVE PERFORMANCE <span class="mq-star">✦</span> STAY TUNED <span class="mq-star">✦</span> SWEET POP! <span class="mq-star">✦</span> SHOWCASE <span class="mq-star">✦</span> WORKSHOP <span class="mq-star">✦</span> EVENT <span class="mq-star">✦</span> LIVE PERFORMANCE <span class="mq-star">✦</span> STAY TUNED <span class="mq-star">✦</span>&nbsp;</span>
+    <span class="marquee-track" aria-hidden="true">SWEET POP! <span class="mq-star">✦</span> SHOWCASE <span class="mq-star">✦</span> WORKSHOP <span class="mq-star">✦</span> EVENT <span class="mq-star">✦</span> LIVE PERFORMANCE <span class="mq-star">✦</span> STAY TUNED <span class="mq-star">✦</span> SWEET POP! <span class="mq-star">✦</span> SHOWCASE <span class="mq-star">✦</span> WORKSHOP <span class="mq-star">✦</span> EVENT <span class="mq-star">✦</span> LIVE PERFORMANCE <span class="mq-star">✦</span> STAY TUNED <span class="mq-star">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -1295,8 +1415,27 @@
 <section id="contact" style="position:relative;overflow:hidden;">
   <img src="assets/glitter-splash.png" alt="" class="glitter-deco" style="top:-60px;right:-60px;width:240px;opacity:0.25;" aria-hidden="true" loading="lazy">
   <div class="section-title fade-up">CONTACT</div>
-  <p class="contact-lead fade-up">お仕事のご依頼・出演依頼・振付のご相談など<br>Instagram DM にてお気軽にご連絡ください。</p>
+  <p class="contact-lead fade-up">お仕事のご依頼・出演依頼・振付のご相談など<br>お気軽にご連絡ください。</p>
 
+  <!-- ④ フォロワー数ソーシャルプルーフ -->
+  <div class="contact-followers fade-up">
+    <div class="follower-item">
+      <div class="f-num">3,800<span style="font-size:16px">+</span></div>
+      <div class="f-label">INSTAGRAM</div>
+    </div>
+    <div class="follower-divider"></div>
+    <div class="follower-item">
+      <div class="f-num">1,200<span style="font-size:16px">+</span></div>
+      <div class="f-label">TIKTOK</div>
+    </div>
+    <div class="follower-divider"></div>
+    <div class="follower-item">
+      <div class="f-num">10<span style="font-size:16px">+</span></div>
+      <div class="f-label">EVENTS / YEAR</div>
+    </div>
+  </div>
+
+  <!-- ⑤ Instagram DM CTA -->
   <a href="https://ig.me/m/cocoro_on_02" target="_blank" class="contact-ig-cta fade-up">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
       <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FF1493" stroke-width="1.5"/>
@@ -1308,6 +1447,19 @@
       <span>@cocoro_on_02</span>
     </div>
     <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="#FF1493" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </a>
+
+  <!-- ⑤ メール窓口 -->
+  <a href="mailto:cocoro.dance.official@gmail.com" class="contact-email-cta fade-up">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="4" width="20" height="16" rx="3" stroke="#C0C0C0" stroke-width="1.5"/>
+      <path d="M2 7L12 13L22 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="contact-email-cta-text">
+      <strong>メールでお問い合わせ</strong>
+      <span>cocoro.dance.official@gmail.com</span>
+    </div>
+    <svg width="14" height="10" viewBox="0 0 16 10"><path d="M0 5H14M10 1L14 5L10 9" stroke="#888" stroke-width="1.5" stroke-linecap="round"/></svg>
   </a>
 
   <p class="contact-sub-label fade-up">FOLLOW ME</p>
